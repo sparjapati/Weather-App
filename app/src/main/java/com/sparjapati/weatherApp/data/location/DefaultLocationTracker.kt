@@ -35,7 +35,7 @@ class DefaultLocationTracker @Inject constructor(
                     if (isSuccessful)
                         cont.resume(if (result != null) Resource.Success(result) else Resource.Error("Unknown Error Occurred"))
                     else
-                        cont.resume(Resource.Error("Unknown Error Occurred"))
+                        cont.resume(Resource.Error("Couldn't retrieve location. Make sure to grant permission and turn on GPS"))
                     return@suspendCancellableCoroutine
                 }
                 addOnSuccessListener {
