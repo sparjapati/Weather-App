@@ -6,6 +6,7 @@ import com.google.android.gms.location.LocationServices
 import com.sparjapati.weatherApp.data.remote.WeatherApi
 import com.sparjapati.weatherApp.data.repository.WeatherRepoImpl
 import com.sparjapati.weatherApp.domain.repository.WeatherRepository
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,7 +20,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 abstract class RepositoryModule {
 
-    @Provides
+    @Binds
     @Singleton
     abstract fun bindWeatherRepository(weatherRepoImpl: WeatherRepoImpl): WeatherRepository
 }

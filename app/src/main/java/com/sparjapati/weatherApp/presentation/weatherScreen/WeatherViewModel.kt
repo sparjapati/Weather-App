@@ -1,5 +1,6 @@
 package com.sparjapati.weatherApp.presentation.weatherScreen
 
+import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -21,11 +22,7 @@ class WeatherViewModel @Inject constructor(
     var state by mutableStateOf(WeatherState())
         private set
 
-    init {
-        loadWeatherInfo()
-    }
-
-    private fun loadWeatherInfo() {
+    fun loadWeatherInfo() {
         viewModelScope.launch {
             state = state.copy(
                 isLoading = true

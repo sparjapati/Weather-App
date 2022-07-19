@@ -19,7 +19,7 @@ fun WeatherDto.WeatherDataDto.toWeatherDataMap(): Map<Int, List<WeatherData>> {
         val humidity = relativehumidity2m[index]
         val weatherCode = weathercode[index]
         val windSpeed = windspeed10m[index]
-        val t = LocalDateTime.parse(timeString, DateTimeFormatter.ISO_DATE)
+        val t = LocalDateTime.parse(timeString, DateTimeFormatter.ISO_DATE_TIME)
         IndexedWeatherData(index,
             WeatherData(t, temperature, pressure, windSpeed, humidity, WeatherType.fromWMO(weatherCode)))
     }.groupBy {
